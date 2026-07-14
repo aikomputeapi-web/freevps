@@ -6,12 +6,6 @@ set -euo pipefail
 # ║            Professional Multi-VM Virtualization             ║
 # ╚══════════════════════════════════════════════════════════════╝
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-VM_DIR="${VM_DIR:-$SCRIPT_DIR/vms}"
-declare -A OS_OPTIONS=()
-
-OS_OPTIONS["Ubuntu"]="ubuntu|noble|https://cloud-images.ubuntu.com/noble/current/noble-server-cloudimg-amd64.img|ubuntu-vm|ubuntu|ubuntu"
-OS_OPTIONS["Debian"]="debian|bookworm|https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-genericcloud-amd64.qcow2|debian-vm|debian|debian"
 
 trap 'tput cnorm 2>/dev/null || true' EXIT
 
